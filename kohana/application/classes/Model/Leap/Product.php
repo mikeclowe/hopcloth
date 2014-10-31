@@ -15,11 +15,19 @@ class Model_Leap_Product extends DB_ORM_Model {
 				'max_length' => 11,
 				'nullable' => FALSE,
 				'unsigned' => TRUE,
-			)),
+			)),	
+			'price' => new DB_ORM_Field_Decimal($this, array(
+        'nullable' => FALSE,
+        'scale' => 2,
+        'precision' => 2,
+      )),
 			'title' => new DB_ORM_Field_String($this, array(
 				'max_length' => 300,
 				'nullable' => FALSE,
 			)),
+			'description' => new DB_ORM_Field_Text($this, array(
+				'nullable' => FALSE,
+			)),			
 			'slug' => new DB_ORM_Field_String($this, array(
 				'max_length' => 300,
 				'nullable' => FALSE,
@@ -29,10 +37,15 @@ class Model_Leap_Product extends DB_ORM_Model {
 				'nullable' => FALSE,
 			)),
       'featured' => new DB_ORM_Field_Integer($this, array(
-				'max_length' => 11,
+				'max_length' => 1,
 				'nullable' => FALSE,
 				'unsigned' => TRUE,
 			)),
+      'active' => new DB_ORM_Field_Integer($this, array(
+				'max_length' => 1,
+				'nullable' => FALSE,
+				'unsigned' => TRUE,
+			)),			
 		);
 
 		$this->relations = array();

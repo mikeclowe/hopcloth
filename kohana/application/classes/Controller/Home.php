@@ -12,7 +12,7 @@ class Controller_Home extends Controller_Base {
 	public function action_product(){
   	$slug = $this->request->param('id');
   	
-  	$p = DB_ORM::select('default')->from('Product')->where('slug', '=', $slug);
+  	$p = DB_ORM::select('default')->from('Product')->where('slug', '=', $slug)->query();
   	
   	$this->view->set('product', $p);
 	}
