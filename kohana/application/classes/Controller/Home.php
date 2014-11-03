@@ -3,7 +3,7 @@
 class Controller_Home extends Controller_Base {
 
 	public function action_index(){
-	  $p = DB_ORM::select('Product')->where('featured', '=', 1)->query();
+	  $p = DB_ORM::select('Product')->where('featured', '=', 1)->where('active', '=', 1)->query();
 
 		$this->view = View::factory("home/index");
 		$this->view->set('products', $p);
@@ -12,8 +12,9 @@ class Controller_Home extends Controller_Base {
 	public function action_product(){
   	$slug = $this->request->param('id');
   	
-  	$p = DB_ORM::select('default')->from('Product')->where('slug', '=', $slug)->query();
+  	$p = DB_ORM::select('Product')->where('slug', '=', $slug)->query()->fetch(0);	
   	
+	$this->view = View::factory("home/product");
   	$this->view->set('product', $p);
 	}
 
