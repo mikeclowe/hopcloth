@@ -1,4 +1,4 @@
-<center><h1>HopCloth</h1></center>
+<center><a href="/home/"><h1>HopCloth</h1></a></center>
 
 <div class="row">
 	
@@ -27,6 +27,7 @@
 	}
 	.tile p {
 		font-size: small;
+		text-align: left;
 	}
 </style>
 

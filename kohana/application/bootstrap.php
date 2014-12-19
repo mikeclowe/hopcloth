@@ -132,4 +132,7 @@ Kohana::modules(array(
 	'leap'	      => MODPATH.'leap',
 	'image'       => MODPATH.'image',
 	));
+//lets set our salt
+Cookie::$salt = "32jsg048dofdsgh43952sdf";
+
 

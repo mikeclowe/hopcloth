@@ -11,7 +11,7 @@ Apply item promos
 Take vacation
 
 */
-Abstract Class Kohana_Cart extends Library_Base{
+Abstract Class Kohana_Cart extends Library_base {
 
 
   static $instance=array();
